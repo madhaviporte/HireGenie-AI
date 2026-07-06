@@ -8,6 +8,7 @@ import {auth, provider } from '../utils/firebase';
 import axios from 'axios'
 import { ServerUrl } from '../App';
 import { setUserData } from '../redux/userSlice';
+import { useDispatch } from "react-redux";
 
 const Auth = () => {
     const dispatch = useDispatch()
