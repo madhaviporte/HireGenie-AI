@@ -341,9 +341,24 @@ Answer: ${answer}
             }
         ];
 
-        const aiResponse = await askAi(messages)
+       const aiResponse = await askAi(messages)
 
-        const parsed = JSON.parse(aiResponse);
+console.log("=========== SUBMIT AI RESPONSE ===========");
+console.log(aiResponse);
+console.log("===========================================");
+
+let cleaned = aiResponse
+    .replace(/```json/gi, "")
+    .replace(/```/g, "")
+    .trim();
+
+const match = cleaned.match(/\{[\s\S]*\}/);
+
+if (!match) {
+    throw new Error("AI did not return valid JSON");
+}
+
+const parsed = JSON.parse(match[0]);
 
         question.answer = answer;
         question.confidence = parsed.confidence
