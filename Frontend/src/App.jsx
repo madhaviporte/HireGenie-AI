@@ -8,7 +8,7 @@ import { setUserData } from './redux/userSlice'
 import InterviewPage from './pages/interviewPage'
 import InterviewHistory from './pages/InterviewHistory'
 import Pricing from './pages/Pricing'
-import InterviewReport from './pages/InterviewReport'
+import InterviewReport from './pages/InterviewReport.jsx'
 
 export const ServerUrl = "https://hiregenie-ai-exe5.onrender.com"
 
