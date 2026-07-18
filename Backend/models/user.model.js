@@ -13,7 +13,7 @@ email:{
 },
 credits:{
     type:Number,
-    default:100
+    default:1000
 }
 
 },{timeseries:true})
