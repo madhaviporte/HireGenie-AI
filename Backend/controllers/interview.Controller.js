@@ -8,6 +8,11 @@ import { response } from 'express'
 export const analyzeResume = async (req, res) => {
 
     try {
+
+          console.log("===== Resume API Called =====");
+    console.log("File:", req.file);
+    console.log("Body:", req.body);
+    
         if (!req.file) {
             return res.status(400).json({ message: "Resume required" })
         }
