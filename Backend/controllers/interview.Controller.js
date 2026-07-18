@@ -100,14 +100,13 @@ const parsed = JSON.parse(match[0]);
         });
 
     } catch (error) {
-  console.error(error)
+  console.error("Resume Error:", error);
 
-  if(req.file && fs.existsSync(req.file.path)){
-    fs.unlinkSync(req.file.path);
-  }
-
- return res.status(500).json({message: error.message})
-    }
+  return res.status(500).json({
+    message: error.message,
+    stack: error.stack
+  });
+}
 }
 
 export const generateQuestion = async (req,res) => {
