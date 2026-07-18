@@ -89,6 +89,11 @@ const Pricing = () => {
         description: `${plan.name} - ${plan.credits} Credits`,
         order_id: result.data.id,
 
+         method: {
+    card: true,
+    upi: true,
+    netbanking: true,
+  },
       handler: async function (response) {
   try {
     console.log("Payment Success", response);
