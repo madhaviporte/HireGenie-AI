@@ -78,7 +78,6 @@ const Pricing = () => {
         }
       );
 
-      console.log(import.meta.env.VITE_RAZORPAY_KEY_ID);
 
 
       const options = {
